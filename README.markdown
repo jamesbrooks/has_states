@@ -18,7 +18,7 @@ This is the equivalent to the following code
     class Page < Activerecord::Base
       STATES = [ 'draft', 'review', 'published' ]
       
-      validates_inclusion_of :states, :in => STATES
+      validates_inclusion_of :state, :in => STATES
       
       named_scope :draft,     :conditions => { :state => 'draft' }
       named_scope :review,    :conditions => { :state => 'review' }
