@@ -32,6 +32,9 @@ module ActiveRecord
           
           # Add boolean accessor
           class_eval "def #{options[:prefix]}#{state}? ; #{options[:field_name]} == '#{state}' ; end"
+          
+          # Add state setter
+          class_eval "def set_#{options[:prefix]}#{state} ; self.#{options[:field_name]} = '#{state}' ; end"
         end
       end
     end
