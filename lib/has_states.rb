@@ -35,6 +35,9 @@ module ActiveRecord
           
           # Add state setter
           class_eval "def set_#{options[:prefix]}#{state} ; self.#{options[:field_name]} = '#{state}' ; end"
+          
+          # Add instant state setter
+          class_eval "def set_#{options[:prefix]}#{state}! ; update_attribute :#{options[:field_name]}, '#{state}' ; end"
         end
       end
     end
