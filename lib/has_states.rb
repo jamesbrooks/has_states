@@ -13,6 +13,7 @@ module ActiveRecord
         }
         
         options.merge!(states.last.is_a?(Hash) ? states.pop : {})
+        states.map!(&:to_s)
         
         if states.empty?
           raise Exception.new("#{class_name} has_states does not define any states, at least one state needs to be defined.")

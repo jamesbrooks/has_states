@@ -16,7 +16,7 @@ If we have a Page model and want to add three states (draft, review and publishe
 This is the equivalent to the following code
 
     class Page < Activerecord::Base
-      STATES = [ :draft, :review, :published]
+      STATES = [ 'draft', 'review', 'published' ]
       
       validates_inclusion_of :states, :in => STATES
       
